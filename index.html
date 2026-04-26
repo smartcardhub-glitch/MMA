@@ -14,9 +14,7 @@
       font-family: Tahoma, Arial, sans-serif;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       min-height: 100vh;
@@ -36,7 +34,7 @@
       inset: 0;
       background:
         radial-gradient(circle at 20% 10%, rgba(255, 70, 70, .22), transparent 30%),
-        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, .10), transparent 28%),
+        radial-gradient(circle at 80% 80%, rgba(255,255,255,.10), transparent 28%),
         linear-gradient(180deg, rgba(0,0,0,.20), rgba(0,0,0,.78));
       z-index: -1;
     }
@@ -92,21 +90,13 @@
       animation: loading 2s ease forwards;
     }
 
-    @keyframes loading {
-      to { width: 100%; }
-    }
-
+    @keyframes loading { to { width: 100%; } }
     @keyframes logoPulse {
       from { transform: scale(.96); opacity: .7; }
       to { transform: scale(1.04); opacity: 1; }
     }
-
     @keyframes splashOut {
-      to {
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
-      }
+      to { opacity: 0; visibility: hidden; pointer-events: none; }
     }
 
     .page {
@@ -120,14 +110,8 @@
     }
 
     @keyframes pageIn {
-      from {
-        transform: translateY(30px);
-        opacity: 0;
-      }
-      to {
-        transform: translateY(0);
-        opacity: 1;
-      }
+      from { transform: translateY(30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
     }
 
     .top-card {
@@ -174,9 +158,7 @@
       letter-spacing: 2px;
     }
 
-    .logo span {
-      color: #ff1722;
-    }
+    .logo span { color: #ff1722; }
 
     .hero-info {
       position: relative;
@@ -254,6 +236,10 @@
       border: 1px solid rgba(255,255,255,.15);
       transition: .25s ease;
       cursor: pointer;
+    }
+
+    button.btn {
+      width: 100%;
     }
 
     .btn-main {
@@ -393,37 +379,18 @@
     }
 
     @media (max-width: 420px) {
-      .page {
-        padding: 14px 12px 28px;
-      }
-
-      .top-card {
-        border-radius: 28px;
-        padding: 18px;
-      }
-
-      h1 {
-        font-size: 28px;
-      }
-
-      .links {
-        gap: 7px;
-      }
-
+      .page { padding: 14px 12px 28px; }
+      .top-card { border-radius: 28px; padding: 18px; }
+      h1 { font-size: 28px; }
+      .links { gap: 7px; }
       .icon {
         width: 50px;
         height: 50px;
         border-radius: 17px;
         font-size: 22px;
       }
-
-      .link-item {
-        font-size: 11px;
-      }
-
-      .info-grid {
-        grid-template-columns: 1fr;
-      }
+      .link-item { font-size: 11px; }
+      .info-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -455,9 +422,9 @@
     </section>
 
     <div class="actions">
-      <a class="btn btn-main" href="https://raw.githubusercontent.com/smartcardhub-glitch/MMA/refs/heads/main/wasem_ios.vcf">
+      <button class="btn btn-main" onclick="saveContact()">
         + أضف إلى جهات الاتصال
-      </a>
+      </button>
       <a class="btn btn-dark" href="tel:0780464559">☎</a>
     </div>
 
@@ -488,7 +455,7 @@
           إنستغرام
         </a>
 
-        <a class="link-item" href="https://wasem1.carrd.co" target="_blank">
+        <a class="link-item" href="https://smartcardhub-glitch.github.io/MMA/" target="_blank">
           <div class="icon website">🌐</div>
           موقعي
         </a>
@@ -539,6 +506,33 @@
   <button class="float-share" onclick="sharePage()">↗</button>
 
   <script>
+    function saveContact() {
+      const vcard = `BEGIN:VCARD
+VERSION:3.0
+N:Khaled;Wasem;;;
+FN:Wasem Khaled
+TEL;TYPE=CELL,VOICE:0780464559
+item1.URL:https://smartcardhub-glitch.github.io/MMA/
+item1.X-ABLabel:بطاقتي الرقمية
+URL;TYPE=HOME:https://smartcardhub-glitch.github.io/MMA/
+NOTE:بطاقتي الرقمية: https://smartcardhub-glitch.github.io/MMA/
+END:VCARD`;
+
+      const blob = new Blob([vcard], { type: "text/vcard;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "wasem-khaled.vcf";
+      document.body.appendChild(a);
+      a.click();
+
+      setTimeout(() => {
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      }, 1000);
+    }
+
     function sharePage() {
       if (navigator.share) {
         navigator.share({
