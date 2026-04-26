@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Card MMA | Wasem Khaled</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Tahoma", Arial, sans-serif;
+    }
+
+    body {
+      background: #f4f4f4;
+      color: #111;
+      min-height: 100vh;
+    }
+
+    .card {
+      max-width: 430px;
+      margin: auto;
+      background: #fff;
+      min-height: 100vh;
+      padding-bottom: 30px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.12);
+    }
+
+    .cover {
+      height: 180px;
+      background: linear-gradient(135deg, #050505, #1b1b1b, #3a0000);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      position: relative;
+    }
+
+    .logo {
+      font-size: 46px;
+      font-weight: 900;
+      letter-spacing: 2px;
+    }
+
+    .logo span {
+      color: #e50914;
+    }
+
+    .profile {
+      text-align: center;
+      padding: 0 25px 25px;
+    }
+
+    .avatar {
+      width: 145px;
+      height: 145px;
+      border-radius: 50%;
+      background: #fff;
+      border: 5px solid #eee;
+      margin: -70px auto 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 58px;
+      font-weight: bold;
+      color: #e50914;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.18);
+    }
+
+    h1 {
+      font-size: 30px;
+      margin-bottom: 6px;
+    }
+
+    .verified {
+      color: #0ea5e9;
+      font-size: 22px;
+    }
+
+    .location {
+      color: #777;
+      margin-bottom: 18px;
+      font-size: 15px;
+    }
+
+    .bio {
+      font-size: 17px;
+      line-height: 1.8;
+      margin: 20px 0;
+      color: #222;
+    }
+
+    .main-actions {
+      display: grid;
+      grid-template-columns: 1fr 62px;
+      gap: 12px;
+      margin: 20px 0;
+    }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      border-radius: 16px;
+      padding: 16px;
+      font-size: 18px;
+      font-weight: bold;
+      transition: 0.25s;
+    }
+
+    .btn-dark {
+      background: #000;
+      color: white;
+    }
+
+    .btn-dark:hover {
+      background: #e50914;
+      transform: translateY(-2px);
+    }
+
+    .btn-call {
+      background: #000;
+      color: white;
+      font-size: 25px;
+    }
+
+    .section-title {
+      background: #eee;
+      border-radius: 12px;
+      padding: 13px 16px;
+      text-align: right;
+      margin: 25px 0 18px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .links {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+      text-align: center;
+    }
+
+    .link-item {
+      text-decoration: none;
+      color: #111;
+      font-size: 13px;
+    }
+
+    .icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      margin: 0 auto 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 26px;
+      font-weight: bold;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.18);
+    }
+
+    .facebook { background: #1877f2; }
+    .whatsapp { background: #25d366; }
+    .snapchat { background: #fffc00; color: #111; }
+    .instagram { background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045); }
+    .website { background: #0ea5e9; }
+
+    .order {
+      margin-top: 30px;
+      display: block;
+      background: #000;
+      color: #fff;
+      text-align: center;
+      padding: 17px;
+      border-radius: 18px;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .order:hover {
+      background: #e50914;
+    }
+
+    .footer {
+      text-align: center;
+      color: #777;
+      font-size: 13px;
+      margin-top: 28px;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 480px) {
+      .card {
+        max-width: 100%;
+      }
+
+      .links {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 8px;
+      }
+
+      .icon {
+        width: 52px;
+        height: 52px;
+        font-size: 23px;
+      }
+
+      .link-item {
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+
+    <div class="cover">
+      <div class="logo"><span>M</span>MA</div>
+    </div>
+
+    <div class="profile">
+
+      <div class="avatar">W</div>
+
+      <h1>Wasem Khaled <span class="verified">✔</span></h1>
+      <div class="location">الأردن | بطاقة رقمية ذكية</div>
+
+      <div class="main-actions">
+        <a class="btn btn-dark" href="https://raw.githubusercontent.com/smartcardhub-glitch/MMA/refs/heads/main/wasem_ios.vcf">
+          أضف إلى جهات الاتصال
+        </a>
+
+        <a class="btn btn-call" href="tel:0780464559">☎</a>
+      </div>
+
+      <p class="bio">
+        بطاقة MMA الرقمية تتيح لك مشاركة بياناتك وروابطك بسهولة عبر NFC أو QR Code،
+        مع إمكانية حفظ جهة الاتصال والرجوع إليها في أي وقت.
+      </p>
+
+      <a class="btn btn-dark" href="mailto:example@email.com">
+        example@email.com
+      </a>
+
+      <div class="section-title">روابط مفيدة</div>
+
+      <div class="links">
+
+        <a class="link-item" href="https://www.facebook.com/share/1C5ZV2Kt9d/" target="_blank">
+          <div class="icon facebook">f</div>
+          فيسبوك
+        </a>
+
+        <a class="link-item" href="https://wa.me/962780464559" target="_blank">
+          <div class="icon whatsapp">☎</div>
+          واتساب
+        </a>
+
+        <a class="link-item" href="https://www.snapchat.com/add/iit5_2008?share_id=4mBbufUfI-g&locale=ar-JO" target="_blank">
+          <div class="icon snapchat">👻</div>
+          سناب
+        </a>
+
+        <a class="link-item" href="https://www.instagram.com/iit5._?igsh=MWR5aDhwbjRsZ2k1OA==" target="_blank">
+          <div class="icon instagram">◎</div>
+          إنستغرام
+        </a>
+
+        <a class="link-item" href="https://wasem1.carrd.co" target="_blank">
+          <div class="icon website">🌐</div>
+          موقعي
+        </a>
+
+      </div>
+
+      <a class="order" href="https://wa.me/962780464559" target="_blank">
+        تواصل للحصول على بطاقتك الخاصة
+      </a>
+
+      <div class="footer">
+        Card MMA<br>
+        هويتك الرقمية بلمسة واحدة
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
