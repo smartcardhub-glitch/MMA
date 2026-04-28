@@ -505,46 +505,44 @@
 
   <button class="float-share" onclick="sharePage()">↗</button>
 
-  <script>
-    function saveContact() {
-      const vcard = `BEGIN:VCARD
+  
+
+
+<script>
+function saveContact(){
+
+const vcard = `BEGIN:VCARD
 VERSION:3.0
+CLASS:PUBLIC
 N:Khaled;Wasem;;;
 FN:Wasem Khaled
-TEL;TYPE=CELL,VOICE:0780464559
-URL:https://smartcardhub-glitch.github.io/MMA/
-item1.URL:https://smartcardhub-glitch.github.io/MMA/
-item1.X-ABLabel:بطاقتي الرقمية
+TITLE:Jordan | Card MMA
+ORG:Card MMA
+TEL;TYPE=mobile,voice:+962780464559
+
+URL;Facebook:https://www.facebook.com/share/1C5ZV2Kt9d/
+URL;Instagram:https://www.instagram.com/iit5._?igsh=MWR5aDhwbjRsZ2k1OA==
+URL;Snapchat:https://www.snapchat.com/add/iit5_2008?share_id=4mBbufUfI-g&locale=ar-JO
+URL;Connect:https://smartcardhub-glitch.github.io/MMA/
+
 END:VCARD`;
 
-      const blob = new Blob([vcard], { type: "text/vcard;charset=utf-8" });
-      const url = URL.createObjectURL(blob);
+const blob = new Blob([vcard], {type:"text/vcard;charset=utf-8"});
+const url = URL.createObjectURL(blob);
 
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = "wasem-khaled.vcf";
-      document.body.appendChild(a);
-      a.click();
+const a = document.createElement("a");
+a.href = url;
+a.download = "wasem-khaled.vcf";
+document.body.appendChild(a);
+a.click();
 
-      setTimeout(() => {
-        document.body.removeChild(a);
-        URL.revokeObjectURL(url);
-      }, 1000);
-    }
+setTimeout(()=>{
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+},1000);
 
-    function sharePage() {
-      if (navigator.share) {
-        navigator.share({
-          title: "Card MMA | Wasem Khaled",
-          text: "بطاقة Wasem Khaled الرقمية",
-          url: window.location.href
-        });
-      } else {
-        navigator.clipboard.writeText(window.location.href);
-        alert("تم نسخ رابط البطاقة");
-      }
-    }
-  </script>
+}
+</script>
 
 </body>
 </html>
